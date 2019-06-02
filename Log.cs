@@ -6,6 +6,7 @@ using System.Net;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+
 namespace AzureLogAnalyticsClient
 {
     public class Log
@@ -28,19 +29,18 @@ namespace AzureLogAnalyticsClient
             _apiVersion = ConfigurationManager.AppSettings.Get("ApiVersion") ?? "2016-04-01";
         }
 
-        public async Task<bool> Info(string message, object data) => await Post(message, data, "Info");
-        public async Task<bool> Warning(string message, object data) => await Post(message, data, "Warning");
-        public async Task<bool> Error(string message, object data) => await Post(message, data, "Error");
-        public async Task<bool> Success(string message, object data) => await Post(message, data, "Success");
+        public async Task<bool> Info(object data) => await Post(data, "Info");
+        public async Task<bool> Warning(object data) => await Post(data, "Warning");
+        public async Task<bool> Error(object data) => await Post(data, "Error");
+        public async Task<bool> Success(object data) => await Post(data, "Success");
 
-        private async Task<bool> Post(string message, object data, string logType)
+        private async Task<bool> Post(object data, string logType)
         {
             var requestUriString = $"https://{_workspaceId}.ods.opinsights.azure.com/api/logs?api-version={_apiVersion}";
             var contentType = "application/json";
             var dateString = DateTime.UtcNow.ToString("r");
 
-            var raw = JsonConvert.SerializeObject(data);
-            var json = JsonConvert.SerializeObject(new { Message = message, RawData = raw });
+            var json = JsonConvert.SerializeObject(data);
 
             var signature = GetSignature("POST", json.Length, contentType, dateString, "/api/logs");
 
