@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace AzureLogAnalyticsClient
 {
-    public class Log
+    public class Log : ILog
     {
         private readonly string _apiVersion;
         private readonly string _workspaceId;
