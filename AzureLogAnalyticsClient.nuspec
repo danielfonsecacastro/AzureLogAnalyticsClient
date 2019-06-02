@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Daniel Fonseca Castro</authors>
+    <owners>Daniel Fonseca Castro</owners>
+    <projectUrl>https://github.com/danielfonsecacastro/AzureLogAnalyticsClient</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Client for Azure Log Analytics</description>
+	
+    <copyright>Copyright 2019</copyright>
+    <tags>Azure Log Analytics</tags>
+  </metadata>
+</package>

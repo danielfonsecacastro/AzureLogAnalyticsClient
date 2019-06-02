@@ -5,10 +5,10 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("AzureLogAnalyticsClient")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Azure Log Analytics Client")]
+[assembly: AssemblyDescription("Client for Azure Log Analytics")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Daniel Fonseca Castro")]
 [assembly: AssemblyProduct("AzureLogAnalyticsClient")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
